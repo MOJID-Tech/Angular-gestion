@@ -1,0 +1,55 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $(".hamburger").click(function(){
+      $(".wrapper").toggleClass("collapse");
+    });
+  });
+</script>
+
+<div class="wrapper">
+  <app-slidemenu></app-slidemenu>
+  <div class="main_container">
+    <div class="item">
+
+      <div class="panel panel-primary">
+        
+        <div class="panel-body">
+            <table class="table table-striped">
+            <thead>
+            <tr>
+              <th> Type</th>
+              <th> Designation   </th>
+              <th> Description</th>
+              <th>Livré</th>
+              <th>prix</th>
+              <th>adresse</th> 
+              <th>capacite</th>       
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let prestation of prestations | async">
+              <td>{{prestation.type.nom}}</td>
+              <td>{{prestation.titre}}</td>
+              <td>{{prestation.description}}</td>
+              <td>{{prestation.livrable}}</td>
+              <td>{{prestation.prix}} </td> 
+              <td>{{prestation.adresse}} </td> 
+              <td>{{prestation.capacite}} </td> 
+          
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+</div>

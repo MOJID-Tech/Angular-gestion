@@ -1,0 +1,87 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+		$(document).ready(function(){
+			$(".hamburger").click(function(){
+			   $(".wrapper").toggleClass("collapse");
+			});
+		});
+	</script>
+
+<div class="wrapper">
+ <app-slidemenu></app-slidemenu>
+
+  <div class="main_container">
+    <div class="item">
+      <h2 class="fonrecri" >Ajouter une nouvelle service</h2>
+      <br><br>
+
+      <div  style="width: 400px;">
+        <form [formGroup]="exform">
+          <div class="form-group">
+            <label><b>  Designation </b> </label>
+            <input type="text" class="form-control" formControlName="designation" name="design" [(ngModel)]=service.designation>
+          <small *ngIf="designation.invalid && designation.touched" class="text-danger">Designation est obligatoire</small>
+           </div>
+          
+          <div class="form-group">
+            <label ><b> Description  </b></label>
+            <input type="text" class="form-control" name="desc"  [(ngModel)]=service.description>
+          </div>
+        
+          <div class="form-group">
+            <label><b> Prix </b> </label>
+            <input type="text" class="form-control" formControlName="prix" [(ngModel)]=service.prix name="prix">
+          <small *ngIf="prix.invalid && prix.touched" class="text-danger">Prix est obligatoire</small>
+          </div>
+           
+           <div class="form-group">
+            <label><b> Adresse </b> </label>
+            <input type="text" class="form-control"  [(ngModel)]=service.adresse name="adresse">
+          </div>
+          
+            <div class="form-group">
+            <label><b> Adresse </b> </label>
+            <input type="text" class="form-control" [(ngModel)]=service.capacite name="capacite">
+          </div>
+
+           <div class="form-group">
+            <label> <b> Livrable </b></label> <br>
+            <input type="radio"  name="choix" value="true" formControlName="choix" [(ngModel)]=service.livrable> Oui 
+            &nbsp; 
+            <input type="radio"  name="choix" value="false" formControlName="choix" [(ngModel)]=service.livrable> Non
+   <small *ngIf="choix.invalid && choix.touched" class="text-danger">Choix est obligatoire</small>
+                    
+          </div>
+          
+          <div class="form-group">
+            <label><b> Type </b> </label>
+              <select name="types" class="form-control" formControlName="types" [(ngModel)]=service.type.nom>
+                 <option>Restauration</option>
+                 <option>Coiffure</option>
+               </select>
+  <small *ngIf="types.invalid && types.touched" class="text-danger">Type est obligatoire</small>
+    
+        </div> 
+       
+            <div class="form-group">
+            <label><b> Démonstation </b> </label>  <br>
+               <img *ngFor='let url of urls' [src]="url"  width="100" height="100">
+               <input type="file"  (change)="onselect($event)"  multiple name="filename">
+          </div>  
+          <br>
+          <button type="submit" class="button" >Confirmer</button>
+        </form>
+      </div>
+
+     
+
+
+    </div>
+  </div>
+
+
+
+
+</div>
+

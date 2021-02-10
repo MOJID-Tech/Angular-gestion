@@ -1,0 +1,103 @@
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url('hero-slider_3.jpg');
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  height: 400px;
+
+}
+
+.boxc {
+  /*display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px 2em;
+  /*padding: .10em;
+  */
+float:left;
+margin : 2px;
+ display: flex;
+
+}
+.cadre {
+ display: flex;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.box {
+  /*display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px 2em;
+  /*padding: .10em;
+  */
+float:left;
+margin : 5px;
+
+}
+.sun {
+    display : inline-block;
+       vertical-align : top;
+
+
+}
+.box :first-child {
+    align-self: center;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
